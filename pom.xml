@@ -9,5 +9,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>domain</module>
+        <module>infrastructure</module>
     </modules>
 </project>
