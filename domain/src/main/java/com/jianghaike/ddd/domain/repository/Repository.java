@@ -1,12 +1,12 @@
 package com.jianghaike.ddd.domain.repository;
 
-import com.jianghaike.ddd.domain.entity.BaseAggregate;
+import com.jianghaike.ddd.domain.entity.Aggregate;
 
 /**
  * 仓储
  * @author jianghaike
  */
-public interface Repository<T extends BaseAggregate> {
+public interface Repository<T extends Aggregate> {
 
     /**
      * 保存聚合根（事件）

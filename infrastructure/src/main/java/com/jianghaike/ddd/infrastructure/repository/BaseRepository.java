@@ -1,6 +1,6 @@
 package com.jianghaike.ddd.infrastructure.repository;
 
-import com.jianghaike.ddd.domain.entity.BaseAggregate;
+import com.jianghaike.ddd.domain.entity.Aggregate;
 import com.jianghaike.ddd.domain.repository.Repository;
 import com.jianghaike.ddd.infrastructure.dao.DomainEventDao;
 
@@ -8,7 +8,7 @@ import com.jianghaike.ddd.infrastructure.dao.DomainEventDao;
  * 仓储根
  * @author jianghaike
  */
-public abstract class BaseRepository<T extends BaseAggregate> implements Repository<T> {
+public abstract class BaseRepository<T extends Aggregate> implements Repository<T> {
 
     private final DomainEventDao eventDao;
 
