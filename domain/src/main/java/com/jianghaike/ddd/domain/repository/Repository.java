@@ -1,6 +1,6 @@
 package com.jianghaike.ddd.domain.repository;
 
-import com.jianghaike.ddd.domain.entity.Aggregate;
+import com.jianghaike.ddd.domain.model.Aggregate;
 
 /**
  * 仓储

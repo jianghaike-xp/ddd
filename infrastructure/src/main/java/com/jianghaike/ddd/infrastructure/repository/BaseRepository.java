@@ -1,6 +1,6 @@
 package com.jianghaike.ddd.infrastructure.repository;
 
-import com.jianghaike.ddd.domain.entity.Aggregate;
+import com.jianghaike.ddd.domain.model.Aggregate;
 import com.jianghaike.ddd.domain.repository.Repository;
 import com.jianghaike.ddd.infrastructure.dao.DomainEventDao;
 
@@ -22,7 +22,7 @@ public abstract class BaseRepository<T extends Aggregate> implements Repository<
      */
     @Override
     public final void save(T aggregate) {
-        eventDao.save(aggregate.getEvents());
+        eventDao.save(aggregate.events());
         aggregate.clearEvents();
         this.doSave(aggregate);
     }

@@ -12,11 +12,11 @@ public abstract class DomainEvent {
 
     private final Instant createdAt = Instant.now();
 
-    public String getId() {
-        return id;
+    public String id() {
+        return this.id;
     }
 
-    public Instant getCreatedAt() {
-        return createdAt;
+    public Instant createdAt() {
+        return this.createdAt;
     }
 }

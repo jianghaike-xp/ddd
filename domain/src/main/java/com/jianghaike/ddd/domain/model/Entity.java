@@ -1,4 +1,4 @@
-package com.jianghaike.ddd.domain.entity;
+package com.jianghaike.ddd.domain.model;
 
 /**
  * 实体

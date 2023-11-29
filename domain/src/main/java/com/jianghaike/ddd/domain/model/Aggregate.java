@@ -1,4 +1,4 @@
-package com.jianghaike.ddd.domain.entity;
+package com.jianghaike.ddd.domain.model;
 
 import com.jianghaike.ddd.domain.event.DomainEvent;
 
@@ -23,21 +23,21 @@ public abstract class Aggregate extends Entity {
      * @param event 事件
      */
     protected final void raiseEvent(DomainEvent event) {
-        this.getEvents().add(event);
+        this.events().add(event);
     }
 
     /**
      * 清除事件
      */
     public final void clearEvents() {
-        this.getEvents().clear();
+        this.events().clear();
     }
 
     /**
      * 获取事件列表
      * @return 事件列表
      */
-    public final List<DomainEvent> getEvents() {
-        return Objects.isNull(events) ? new ArrayList<>() : events;
+    public final List<DomainEvent> events() {
+        return Objects.isNull(this.events) ? new ArrayList<>() : this.events;
     }
 }

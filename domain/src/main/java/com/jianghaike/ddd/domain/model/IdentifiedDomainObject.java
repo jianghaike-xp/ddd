@@ -1,7 +1,7 @@
-package com.jianghaike.ddd.domain.entity;
+package com.jianghaike.ddd.domain.model;
 
 /**
- * 已标识的领域对象
+ * 标识领域对象
  * @author jianghaike
  */
 public abstract class IdentifiedDomainObject {
@@ -12,7 +12,7 @@ public abstract class IdentifiedDomainObject {
         super();
     }
 
-    protected long getId() {
+    protected long id() {
         return this.id;
     }
 
