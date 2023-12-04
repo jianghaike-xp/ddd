@@ -6,7 +6,9 @@ import com.jianghaike.ddd.domain.type.Identifier;
  * 标识领域对象
  * @author jianghaike
  */
-public abstract class IdentifiedDomainObject<ID extends Identifier> implements Identifiable<ID> {
+public abstract class IdentifiedDomainObject<ID extends Identifier<?>> implements Identifiable<ID> {
+
+    private static final long serialVersionUID = -4030870215888129697L;
 
     private long id = -1;
 

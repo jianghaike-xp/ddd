@@ -7,7 +7,19 @@ import com.jianghaike.ddd.domain.type.Identifier;
  * 仓储
  * @author jianghaike
  */
-public interface Repository<T extends Aggregate<ID>, ID extends Identifier> {
+public interface Repository<T extends Aggregate<ID>, ID extends Identifier<?>> {
+
+    /**
+     * 将一个Aggregate附属到一个Repository，让它变为可追踪。
+     * @param aggregate 聚合
+     */
+    void attach(T aggregate);
+
+    /**
+     * 解除一个Aggregate的追踪
+     * @param aggregate 聚合
+     */
+    void detach(T aggregate);
 
     /**
      * 通过ID寻找聚合

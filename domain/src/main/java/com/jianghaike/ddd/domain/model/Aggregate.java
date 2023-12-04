@@ -11,7 +11,9 @@ import java.util.Objects;
  * 聚合
  * @author jianghaike
  */
-public abstract class Aggregate<ID extends Identifier> extends Entity<ID> {
+public abstract class Aggregate<ID extends Identifier<?>> extends Entity<ID> {
+
+    private static final long serialVersionUID = -1088640007364814492L;
 
     private List<DomainEvent> events;
 

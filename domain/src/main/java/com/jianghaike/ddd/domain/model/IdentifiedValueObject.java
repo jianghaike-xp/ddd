@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 标识值对象
  * @author jianghaike
  */
-public abstract class IdentifiedValueObject<ID extends Identifier> extends IdentifiedDomainObject<ID> implements Serializable {
+public abstract class IdentifiedValueObject<ID extends Identifier<?>> extends IdentifiedDomainObject<ID> implements Serializable {
 
     private static final long serialVersionUID = 1581271456412267165L;
 

@@ -9,7 +9,7 @@ import com.jianghaike.ddd.infrastructure.dao.DomainEventDao;
  * 仓储根
  * @author jianghaike
  */
-public abstract class BaseRepository<T extends Aggregate<ID>, ID extends Identifier> implements Repository<T, ID> {
+public abstract class BaseRepository<T extends Aggregate<ID>, ID extends Identifier<?>> implements Repository<T, ID> {
 
     private final DomainEventDao eventDao;
 
