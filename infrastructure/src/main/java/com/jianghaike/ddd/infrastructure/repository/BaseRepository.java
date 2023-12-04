@@ -2,13 +2,14 @@ package com.jianghaike.ddd.infrastructure.repository;
 
 import com.jianghaike.ddd.domain.model.Aggregate;
 import com.jianghaike.ddd.domain.repository.Repository;
+import com.jianghaike.ddd.domain.type.Identifier;
 import com.jianghaike.ddd.infrastructure.dao.DomainEventDao;
 
 /**
  * 仓储根
  * @author jianghaike
  */
-public abstract class BaseRepository<T extends Aggregate> implements Repository<T> {
+public abstract class BaseRepository<T extends Aggregate<ID>, ID extends Identifier> implements Repository<T, ID> {
 
     private final DomainEventDao eventDao;
 
@@ -21,7 +22,7 @@ public abstract class BaseRepository<T extends Aggregate> implements Repository<
      * @param aggregate 聚合根
      */
     @Override
-    public final void save(T aggregate) {
+    public void save(T aggregate) {
         eventDao.save(aggregate.events());
         aggregate.clearEvents();
         this.doSave(aggregate);
