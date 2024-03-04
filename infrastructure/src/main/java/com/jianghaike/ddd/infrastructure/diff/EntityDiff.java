@@ -4,7 +4,7 @@ package com.jianghaike.ddd.infrastructure.diff;
  * 实体差异
  * @author jianghaike
  */
-public class EntityDiff implements Diff {
+public class EntityDiff {
 
     public static final EntityDiff EMPTY = new EntityDiff();
 

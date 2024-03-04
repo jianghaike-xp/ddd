@@ -20,14 +20,17 @@ public class SingleDiff implements Diff {
         this.newValue = newValue;
     }
 
+    @Override
     public DiffType getDiffType() {
         return diffType;
     }
 
+    @Override
     public Object getOldValue() {
         return oldValue;
     }
 
+    @Override
     public Object getNewValue() {
         return newValue;
     }
