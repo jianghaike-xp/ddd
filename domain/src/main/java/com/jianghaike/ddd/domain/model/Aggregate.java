@@ -4,6 +4,7 @@ import com.jianghaike.ddd.domain.event.DomainEvent;
 import com.jianghaike.ddd.domain.type.Identifier;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -15,7 +16,7 @@ public abstract class Aggregate<ID extends Identifier<?>> extends Entity<ID> {
 
     private static final long serialVersionUID = -1088640007364814492L;
 
-    private List<DomainEvent> events;
+    private final List<DomainEvent> events = new ArrayList<>();
 
     protected Aggregate() {
         super();
@@ -26,14 +27,14 @@ public abstract class Aggregate<ID extends Identifier<?>> extends Entity<ID> {
      * @param event 事件
      */
     protected final void raiseEvent(DomainEvent event) {
-        this.events().add(event);
+        events.add(event);
     }
 
     /**
      * 清除事件
      */
     public final void clearEvents() {
-        this.events().clear();
+        events.clear();
     }
 
     /**
@@ -41,6 +42,6 @@ public abstract class Aggregate<ID extends Identifier<?>> extends Entity<ID> {
      * @return 事件列表
      */
     public final List<DomainEvent> events() {
-        return Objects.isNull(this.events) ? new ArrayList<>() : this.events;
+        return Collections.unmodifiableList(events);
     }
 }

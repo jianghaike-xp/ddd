@@ -18,9 +18,12 @@
 
     <properties>
         <java-object-diff.version>0.95</java-object-diff.version>
+        <javers-core.version>6.14.0</javers-core.version>
     </properties>
 
     <modules>
+        <module>interface</module>
+        <module>application</module>
         <module>domain</module>
         <module>infrastructure</module>
     </modules>
@@ -31,6 +34,11 @@
                 <groupId>de.danielbechler</groupId>
                 <artifactId>java-object-diff</artifactId>
                 <version>${java-object-diff.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.javers</groupId>
+                <artifactId>javers-core</artifactId>
+                <version>${javers-core.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
